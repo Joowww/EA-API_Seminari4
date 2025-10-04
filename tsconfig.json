@@ -1,11 +1,33 @@
+// {
+//   "compilerOptions": {
+//       "target": "ES6",
+//       "module": "commonjs",
+//       "outDir": "./dist",
+//       "rootDir": "./src",
+//       "types": ["node"],
+//       "strict": true,
+//       "esModuleInterop": true,
+//       "allowSyntheticDefaultImports": true,
+//     }
+// }
+
 {
-    "compilerOptions": {
-      "target": "ES6",
-      "module": "commonjs",
-      "outDir": "./dist",
-      "rootDir": "./src",
-      "strict": true,
-      "esModuleInterop": true
-    }
-  }
-  
+  "compilerOptions": {
+    "target": "ES2020",                    // Versión de JavaScript a generar
+    "module": "commonjs",                  // Sistema de módulos (Node.js usa commonjs)
+    "lib": ["ES2020"],                     // Librerías disponibles (ES2020 features)
+    "outDir": "./dist",                    // Carpeta donde se guarda el código compilado
+    "rootDir": "./src",                    // Carpeta raíz del código fuente
+    "strict": true,                        // Habilita todas las verificaciones estrictas
+    "esModuleInterop": true,               // Permite importar módulos CommonJS como ES6
+    "skipLibCheck": true,                  // Omite verificación de tipos en librerías
+    "forceConsistentCasingInFileNames": true, // Fuerza consistencia en mayúsculas/minúsculas
+    "resolveJsonModule": true,             // Permite importar archivos JSON
+    "declaration": false,                  // No genera archivos .d.ts (definiciones)
+    "experimentalDecorators": true,        // Habilita decoradores (necesario para Mongoose)
+    "emitDecoratorMetadata": true,         // Emite metadatos para decoradores
+    "types": ["node"]                      // Incluye tipos de Node.js
+  },
+  "include": ["src/**/*"],                 // Incluye todos los archivos en src/
+  "exclude": ["node_modules", "dist"]      // Excluye estas carpetas
+}

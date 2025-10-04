@@ -148,4 +148,53 @@ router.put('/:username', usuarioController.updateUserByUsername);
  */
 router.delete('/:username', usuarioController.deleteUserByUsername);
 
+/**
+ * @swagger
+ * /user/auth/login:
+ *   post:
+ *     summary: Iniciar sesión de usuario
+ *     tags: [Autenticación]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - password
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Login exitoso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                 user:
+ *                   $ref: '#/components/schemas/Usuario'
+ *       401:
+ *         description: Credenciales incorrectas
+ */
+router.post('/auth/login', usuarioController.loginUser);
+
+/**
+ * @swagger
+ * /user/auth/create-admin:
+ *   post:
+ *     summary: Crear usuario admin (solo desarrollo)
+ *     tags: [Autenticación]
+ *     responses:
+ *       200:
+ *         description: Usuario admin creado/verificado
+ */
+router.post('/auth/create-admin', usuarioController.createAdminUser);
+
 export default router;

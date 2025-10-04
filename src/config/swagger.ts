@@ -14,8 +14,6 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  //aqui solo hace falta explicar que apis y rutas se llaman: se puede poner una ruta concreta o todas las rutas de una carpeta
-  //apis: ['./src/routes/*.ts'],
   apis: [
     './src/routes/usuarioRoutes.ts',
     './src/routes/eventoRoutes.ts'
